@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
+    private bool isFacingRight = true;
 
     private void Awake()
     {
@@ -19,10 +20,22 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody.velocity = _movementInput * _speed;
+        Flip();
     }
 
     private void OnMove(InputValue inputValue)
     {
         _movementInput = inputValue.Get<Vector2>();
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && _movementInput.x < 0f || !isFacingRight && _movementInput.x > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
     }
 }

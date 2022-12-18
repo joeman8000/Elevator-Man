@@ -24,7 +24,7 @@ private void GameManagerOnOnGameStateChanged(GameState state)
     _MenuPanel.SetActive(state == GameState.BeginGame);
 }
 
-private void StartGame()
+public void StartGame()
 {
     GameManager.Instance.UpdateGameState(GameState.InGame);
 }

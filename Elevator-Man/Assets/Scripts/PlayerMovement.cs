@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
     private bool isFacingRight = true;
+    public Animator animator;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody.velocity = _movementInput * _speed;
         Flip();
+        animator.SetFloat("Speed", Mathf.Abs(_movementInput.x+_movementInput.y));
     }
 
     private void OnMove(InputValue inputValue)

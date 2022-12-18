@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
 
 void Awake()
 {
+     
     GameManager.OnGameStateChanged += GameManagerOnOnGameStateChanged;
 }
 
@@ -21,6 +22,11 @@ void OnDestroy()
 private void GameManagerOnOnGameStateChanged(GameState state)
 {
     _MenuPanel.SetActive(state == GameState.BeginGame);
+}
+
+private void StartGame()
+{
+    GameManager.Instance.UpdateGameState(GameState.InGame);
 }
 
 

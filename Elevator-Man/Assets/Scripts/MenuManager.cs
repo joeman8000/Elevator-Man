@@ -1,11 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-[SerializeField] private  GameObject _MenuPanel;
+/*[SerializeField] private  GameObject _MenuPanel;
 [SerializeField] private TextMesh _stateText;
 
 void Awake()
@@ -22,11 +22,11 @@ void OnDestroy()
 private void GameManagerOnOnGameStateChanged(GameState state)
 {
     _MenuPanel.SetActive(state == GameState.BeginGame);
-}
+}*/
 
 public void StartGame()
 {
-    GameManager.Instance.UpdateGameState(GameState.InGame);
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
 }
 
 

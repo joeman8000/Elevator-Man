@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.BeginGame);
+        UpdateGameState(GameState.InGame);
     }
 
     public void UpdateGameState(GameState newState)
@@ -27,10 +27,11 @@ public class GameManager : MonoBehaviour
 
         switch(newState)
         {
-            case GameState.BeginGame:
-                break;
+            //case GameState.BeginGame:
+                //break;
             case GameState.InGame:
                 Debug.Log("in game");
+                HandleInGame();
                 break;
             case GameState.Shop:
                 break;
@@ -41,11 +42,17 @@ public class GameManager : MonoBehaviour
         }
         OnGameStateChanged?.Invoke(newState);
     }
+
+    private void HandleInGame()
+    {
+        EnemyManager.EnemySpawn(1);
+    }
+
 }//6:31 https://www.youtube.com/watch?v=4I0vonyqMi8
 
 public enum GameState
 {  
-    BeginGame,
+    //BeginGame,
     InGame,
     Shop,
     Lose

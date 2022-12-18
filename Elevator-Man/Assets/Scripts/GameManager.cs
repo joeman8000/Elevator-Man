@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.InGame);
+        UpdateGameState(GameState.BeginGame);
     }
 
     public void UpdateGameState(GameState newState)
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
             case GameState.BeginGame:
                 break;
             case GameState.InGame:
+                Debug.Log("in game");
                 break;
             case GameState.Shop:
                 break;

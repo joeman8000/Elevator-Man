@@ -5,13 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed;
-
+    [SerializeField] private float _speed;
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
     private bool isFacingRight = true;
     public Animator animator;
+    public GameObject bullet;
+    public Transform shootPoint;
+    public float shootSpeed;
+    public float bulletSpeed;
+    private bool canShoot = true;
 
     private void Awake()
     {
@@ -30,6 +33,14 @@ public class PlayerMovement : MonoBehaviour
         _movementInput = inputValue.Get<Vector2>();
     }
 
+    private void OnFire(InputValue inputValue)
+    {
+        if(canShoot)
+        {
+            StartCoroutine(shootGun());
+        }
+    }
+
     private void Flip()
     {
         if (isFacingRight && _movementInput.x < 0f || !isFacingRight && _movementInput.x > 0f)
@@ -39,5 +50,18 @@ public class PlayerMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    public IEnumerator shootGun()
+    {
+        canShoot = false;
+        GameObject bulletCreated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+        Rigidbody2D bulletRigidbody =  bulletCreated.GetComponent<Rigidbody2D>();
+
+        bulletRigidbody.AddForce(shootPoint.right * bulletSpeed);
+
+        Destroy(bulletCreated, 5);
+        yield return new WaitForSeconds(shootSpeed);
+        canShoot = true;
     }
 }

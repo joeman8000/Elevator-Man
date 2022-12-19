@@ -994,6 +994,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3.5
   animator: {fileID: 788758183426953660}
+  bullet: {fileID: 4412692050721431334, guid: 5f594ee2056628d4bb6d2dd238f0c334, type: 3}
+  shootPoint: {fileID: 1517046254}
+  shootSpeed: 1
+  bulletSpeed: 5
 --- !u!50 &1517046252
 Rigidbody2D:
   serializedVersion: 4
@@ -1014,7 +1018,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!212 &1517046253
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1980,7 +1984,6 @@ MonoBehaviour:
   - {fileID: 337270185}
   - {fileID: 2031821769}
   - {fileID: 2103350302}
-  - {fileID: 0}
   enemyPrefabs:
   - {fileID: 227054325143232454, guid: ced30bbb2541fbe4f889128e6a72aa9d, type: 3}
   - {fileID: 2101827199847637473, guid: 0cc2a7c9698dcdd4b92400536d0e0155, type: 3}

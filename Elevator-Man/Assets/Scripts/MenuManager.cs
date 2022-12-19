@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-/*[SerializeField] private  GameObject _MenuPanel;
+[SerializeField] private  GameObject _MenuPanel;
 [SerializeField] private TextMesh _stateText;
 
 void Awake()
@@ -21,8 +21,9 @@ void OnDestroy()
 
 private void GameManagerOnOnGameStateChanged(GameState state)
 {
-    _MenuPanel.SetActive(state == GameState.BeginGame);
-}*/
+    _MenuPanel.SetActive(state == GameState.Shop);
+
+}
 
 public void StartGame()
 {

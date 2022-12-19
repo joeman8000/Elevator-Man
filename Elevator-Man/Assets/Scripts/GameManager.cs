@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameState State;
 
     public static event Action<GameState> OnGameStateChanged;
+    public RandomSpawner RandomSpawningItem;
+    public EnemyCounter ECount;
 
     void Awake()
     {
@@ -18,7 +20,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.InGame);
+        UpdateGameState(GameState.BeginGame);
+    }
+
+    void FixedUpdate()
+    {
+        if (State == GameState.InGame)
+        {
+            ECount.AmountofEnemies();
+        }
     }
 
     public void UpdateGameState(GameState newState)
@@ -27,11 +37,12 @@ public class GameManager : MonoBehaviour
 
         switch(newState)
         {
-            //case GameState.BeginGame:
-                //break;
+            case GameState.BeginGame:
+                Invoke("HandleSpawning", 3.0f);
+                break;
             case GameState.InGame:
                 Debug.Log("in game");
-                HandleInGame();
+                //HandleInGame();
                 break;
             case GameState.Shop:
                 break;
@@ -40,19 +51,24 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
+        Debug.Log("extra");
         OnGameStateChanged?.Invoke(newState);
     }
 
-    private void HandleInGame()
+    private void HandleSpawning()
     {
-        EnemyManager.EnemySpawn(1);
+        int numOfE = 4;
+        RandomSpawningItem.EnemySpawn(numOfE);
+        ECount.SetEnemiesAmount(numOfE);
+        UpdateGameState(GameState.InGame);
+        //EnemyManager.EnemySpawn(1);
     }
 
 }//6:31 https://www.youtube.com/watch?v=4I0vonyqMi8
 
 public enum GameState
 {  
-    //BeginGame,
+    BeginGame,
     InGame,
     Shop,
     Lose

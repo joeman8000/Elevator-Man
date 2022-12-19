@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
+    //[SerializeField] private AIChase chaseScript;
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject player;
+    public GameObject enemies;
+    public void EnemySpawn(int enemyAmount)
     {
-        
+        for(int i = 0; i < enemyAmount; i++)
+        {
+        int randEnemy = Random.Range(0, enemyPrefabs.Length);
+        int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+
+        GameObject childObject = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation); //as GameObject;
+        childObject.transform.parent = enemies.transform;
+        }
     }
 
-    // Update is called once per frame
+    //click to spawn
+    /*
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -22,5 +32,5 @@ public class RandomSpawner : MonoBehaviour
 
             Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation);
         }
-    }   
+    }  */
 }

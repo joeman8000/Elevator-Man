@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State;
+    [SerializeField] private PlayerMovement playerMove;
 
     public static event Action<GameState> OnGameStateChanged;
     public RandomSpawner RandomSpawningItem;
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour
     private static int floor;
     public GameObject[] cardsL;
     public GameObject[] cardsR;
+
+    private int randCard;
+    private int randCard2;
 
     void Awake()
     {
@@ -83,6 +87,9 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
+        playerMove.bulletDamage = 5;
+        playerMove.shootSpeed = 1;
+        floor = 0;
         Invoke("ToMainMenu", 1.7f);
     }
     private void ToMainMenu()
@@ -102,8 +109,8 @@ public class GameManager : MonoBehaviour
     private void HandleShop()
     {
         Debug.Log("1");
-        int randCard = UnityEngine.Random.Range(0, cardsL.Length);
-        int randCard2 = UnityEngine.Random.Range(0, cardsR.Length);
+        randCard = UnityEngine.Random.Range(0, cardsL.Length);
+        randCard2 = UnityEngine.Random.Range(0, cardsR.Length);
         Debug.Log("2");
         while(randCard == randCard2)
         {
@@ -113,6 +120,22 @@ public class GameManager : MonoBehaviour
         cardsL[randCard].SetActive(true);
         cardsR[randCard2].SetActive(true);
         Debug.Log("4");
+    }
+
+    public void IncreaseBulletSpeed()
+    {
+        playerMove.shootSpeed -= .25f;
+        UpdateGameState(GameState.BeginGame);
+        cardsL[randCard].SetActive(false);
+        cardsR[randCard2].SetActive(false);
+    }
+
+    public void IncreaseBulletDamage()
+    {
+        playerMove.bulletDamage += 2f;
+        UpdateGameState(GameState.BeginGame);
+        cardsL[randCard].SetActive(false);
+        cardsR[randCard2].SetActive(false);
     }
 
 }//6:31 https://www.youtube.com/watch?v=4I0vonyqMi8

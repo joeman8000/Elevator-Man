@@ -15,6 +15,7 @@ public class AIChase : MonoBehaviour
     //private Color c;
     //private Renderer rend;
     private GameObject ECountObj;
+    public GameObject EnemyDeathParticle;
 
 
     // Update is called once per frame
@@ -41,7 +42,9 @@ public class AIChase : MonoBehaviour
 
         if(enemyhealth <= 0)
         {
+            
             Destroy(this.gameObject);
+            Instantiate(EnemyDeathParticle, transform.position, Quaternion.identity);
 
         }
     }

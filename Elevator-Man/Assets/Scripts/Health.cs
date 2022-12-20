@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -10,10 +11,38 @@ public class Health : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject DeathParticle;
     //public GameManager gm;
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
+
 
     private void Start(){
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        for(int i = 0; i <hearts.Length; i++)
+        {
+            if(i < health)
+            {
+                hearts[i].sprite = fullHeart;
+            } else {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            if(i < maxHealth){
+                hearts[i].enabled = true;
+            } else {
+                hearts[i].enabled = false;
+            }
+        }
     }
 
     public void UpdateHealth(int mod, bool fellOffMap)

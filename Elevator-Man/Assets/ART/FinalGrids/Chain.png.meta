@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec7d42e84d4669428485d28fb2129b6
-      internalID: 1152673489
+      spriteID: 2c335e0374863f94aa05de523ddac4f1
+      internalID: -291226396
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a1b6df39399f4b41a138a9c81a3ab93
-      internalID: 1561339916
+      spriteID: 4a01ad38d0f1b9f419ad8317976fbaad
+      internalID: 452282621
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73485612e98921a4fb6548520ec970d3
-      internalID: 559231734
+      spriteID: 40291f270dcaf1544afabb2ccdeb8edc
+      internalID: -1495876948
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7139a0ec383e39849bbdaf1cc9236123
-      internalID: 1837455585
+      spriteID: d6671b81b86a4164084b59f5fb39d0ff
+      internalID: -391892499
       vertices: []
       indices: 
       edges: []
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eb3ba34ff2c2254d94ce7f5ade0724c
-      internalID: -148995503
+      spriteID: 9ff36b5a31dddd84eb59c3ac774ca85a
+      internalID: -1739656585
       vertices: []
       indices: 
       edges: []
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c30078453f9edb6418de57a89eb73ba3
-      internalID: -1991398749
+      spriteID: a8fd7ddb8ba87b24e9e64856a7ffbe01
+      internalID: 1237032326
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chain_1: 1561339916
-      Chain_5: -1991398749
-      Chain_3: 1837455585
-      Chain_0: 1152673489
-      Chain_2: 559231734
-      Chain_4: -148995503
+      Chain_1: 452282621
+      Chain_5: 1237032326
+      Chain_3: -391892499
+      Chain_0: -291226396
+      Chain_2: -1495876948
+      Chain_4: -1739656585
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

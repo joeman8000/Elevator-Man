@@ -24,12 +24,10 @@ public class Health : MonoBehaviour
         {
             health = 0;
             Debug.Log("Player Die");
-            if fellOffMap = true
+            if (fellOffMap == true)
             {
-                animator.SetBool("Death,", true);
+                animator.SetBool("Dead", true);
             }
-        
-            
         }
 
     }

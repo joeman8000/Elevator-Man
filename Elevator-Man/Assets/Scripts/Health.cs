@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int health = 0;
+    [HideInInspector] public int health = 0;
     public Animator animator;
     [SerializeField] private int maxHealth = 3;
-    public GameManager gm;
+    //public GameManager gm;
 
     private void Start(){
         health = maxHealth;
@@ -31,8 +31,7 @@ public class Health : MonoBehaviour
             }
             else{
                 animator.SetBool("Dead", true);
-            }
-            gm.Death();    
+            }  
         }
 
     }

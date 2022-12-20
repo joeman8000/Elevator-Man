@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateChanged;
     public RandomSpawner RandomSpawningItem;
     public EnemyCounter ECount;
+    public Health h;
 
     void Awake()
     {
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
             {
                 UpdateGameState(GameState.BeginGame);
             }
+        }
+
+        if(h.health <= 0)
+        {
+            Death();
         }
     }
 
@@ -62,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
-        Invoke("ToMainMenu", 3.0f);
+        Invoke("ToMainMenu", 1.7f);
     }
     private void ToMainMenu()
     {

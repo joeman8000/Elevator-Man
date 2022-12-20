@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 [SerializeField] private  GameObject _MenuPanel;
-[SerializeField] private TextMesh _stateText;
+//[SerializeField] private TextMesh _stateText;
 
 void Awake()
 {

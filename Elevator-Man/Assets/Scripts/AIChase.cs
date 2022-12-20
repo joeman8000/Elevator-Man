@@ -16,6 +16,7 @@ public class AIChase : MonoBehaviour
     //private Renderer rend;
     private GameObject ECountObj;
 
+
     // Update is called once per frame
     void Awake()
     {
@@ -41,6 +42,7 @@ public class AIChase : MonoBehaviour
         if(enemyhealth <= 0)
         {
             Destroy(this.gameObject);
+
         }
     }
 

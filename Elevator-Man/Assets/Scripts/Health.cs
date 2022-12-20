@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public Animator animator;
     [SerializeField] private int maxHealth = 3;
     private Rigidbody2D rb;
+    public GameObject DeathParticle;
     //public GameManager gm;
 
     private void Start(){
@@ -27,6 +28,7 @@ public class Health : MonoBehaviour
         {
             health = 0;
             Debug.Log("Player Die");
+            Instantiate(DeathParticle, transform.position, Quaternion.identity);
             if (fellOffMap == true)
             {
                 animator.SetBool("fDead", true);

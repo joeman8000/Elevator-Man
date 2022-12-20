@@ -7,10 +7,12 @@ public class Health : MonoBehaviour
     [HideInInspector] public int health = 0;
     public Animator animator;
     [SerializeField] private int maxHealth = 3;
+    private Rigidbody2D rb;
     //public GameManager gm;
 
     private void Start(){
         health = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void UpdateHealth(int mod, bool fellOffMap)
@@ -32,6 +34,7 @@ public class Health : MonoBehaviour
             else{
                 animator.SetBool("Dead", true);
             }  
+            rb.bodyType = RigidbodyType2D.Static;
         }
 
     }

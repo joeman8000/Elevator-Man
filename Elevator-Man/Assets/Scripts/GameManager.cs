@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public RandomSpawner RandomSpawningItem;
     public EnemyCounter ECount;
     public Health h;
+    [SerializeField] private int WavesPerShop;
 
     void Awake()
     {

@@ -8,7 +8,7 @@ public class FloorAttributes : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-                collision.gameObject.GetComponent<Health>().UpdateHealth(-1);
+                collision.gameObject.GetComponent<Health>().UpdateHealth(-1, true);
                 if(collision.gameObject.GetComponent<Health>().AccessHealth() != 0)
                 {
                 Vector2 x = new Vector2(0f,0f);

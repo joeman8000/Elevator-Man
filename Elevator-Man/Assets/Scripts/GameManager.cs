@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
             {
                 UpdateGameState(GameState.BeginGame);
             }
-
         }
     }
 

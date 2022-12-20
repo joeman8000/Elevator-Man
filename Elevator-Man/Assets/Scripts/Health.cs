@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
         health = maxHealth;
     }
 
-    public void UpdateHealth(int mod)
+    public void UpdateHealth(int mod, bool fellOffMap)
     {
         health += mod;
 
@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
         {
             health = 0;
             Debug.Log("Player Die");
+            
         }
 
     }

@@ -50,7 +50,7 @@ public class AIChase : MonoBehaviour
         {
             if (attackSpeed<=canAttack)
             {
-                collision.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
+                collision.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage, false);
                 //StartCoroutine("GetInvulernable");
                 canAttack = 0f;
             }

@@ -943,6 +943,7 @@ GameObject:
   - component: {fileID: 1517046250}
   - component: {fileID: 1517046255}
   - component: {fileID: 788758183426953660}
+  - component: {fileID: 788758183426953661}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -996,7 +997,7 @@ MonoBehaviour:
   animator: {fileID: 788758183426953660}
   bullet: {fileID: 4412692050721431334, guid: 5f594ee2056628d4bb6d2dd238f0c334, type: 3}
   shootPoint: {fileID: 1517046254}
-  shootSpeed: 1
+  shootSpeed: 0.1
   bulletSpeed: 5
 --- !u!50 &1517046252
 Rigidbody2D:
@@ -2040,6 +2041,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &788758183426953661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517046249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4231f8b9e27e404da680fe03288829e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
 --- !u!1001 &4526771274060728279
 PrefabInstance:
   m_ObjectHideFlags: 0

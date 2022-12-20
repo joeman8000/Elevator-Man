@@ -7,6 +7,9 @@ public class AIChase : MonoBehaviour
     private GameObject player;
     public float speed;
     public float distanceBetween;
+    [SerializeField] private float attackDamage = 5;
+    [SerializeField] private float attackSpeed = 1f;
+    private float canAttack;
     private float distance;
 
     // Update is called once per frame
@@ -22,6 +25,21 @@ public class AIChase : MonoBehaviour
         {
         EnemyFlip(direction);
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (attackSpeed<=canAttack)
+            {
+                other.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
+                canAttack = 0f;
+            }
+            else{
+                canAttack +=Time.deltaTime;
+            }
         }
     }
 

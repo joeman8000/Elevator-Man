@@ -148,3 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   distanceBetween: 100
+  attackDamage: 5
+  attackSpeed: 1

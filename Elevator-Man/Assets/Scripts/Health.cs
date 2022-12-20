@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private float health = 0f;
-    [SerializeField] private float maxHealth = 100f;
+    private int health = 0;
+    [SerializeField] private int maxHealth = 3;
 
     private void Start(){
         health = maxHealth;
     }
 
-    public void UpdateHealth(float mod)
+    public void UpdateHealth(int mod)
     {
         health += mod;
 
@@ -20,9 +20,14 @@ public class Health : MonoBehaviour
             health = maxHealth;
         } else if (health <= 0)
         {
-            health = 0f;
+            health = 0;
             Debug.Log("Player Die");
         }
 
+    }
+
+    public int AccessHealth()
+    {
+        return health;
     }
 }

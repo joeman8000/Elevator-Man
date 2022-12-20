@@ -8,7 +8,7 @@ public class AIChase : MonoBehaviour
     private GameObject player;
     public float speed;
     public float distanceBetween;
-    [SerializeField] private float attackDamage = 5;
+    [SerializeField] private int attackDamage = 5;
     [SerializeField] private float attackSpeed = 1f;
     private static float canAttack;
     private float distance;

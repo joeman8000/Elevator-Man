@@ -146,9 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1412b000a1ad564b889add45e9e8a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyhealth: 20
+  enemyhealth: 1
   speed: 1
   distanceBetween: 100
-  attackDamage: 5
+  attackDamage: 1
   attackSpeed: 1
-  ECount: {fileID: 0}

@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     private int health = 0;
     public Animator animator;
     [SerializeField] private int maxHealth = 3;
+    public GameManager gm;
 
     private void Start(){
         health = maxHealth;
@@ -26,8 +27,12 @@ public class Health : MonoBehaviour
             Debug.Log("Player Die");
             if (fellOffMap == true)
             {
+                animator.SetBool("fDead", true);
+            }
+            else{
                 animator.SetBool("Dead", true);
             }
+            gm.Death();    
         }
 
     }

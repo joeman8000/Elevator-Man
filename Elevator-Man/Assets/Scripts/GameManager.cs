@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,6 +58,15 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log("extra");
         OnGameStateChanged?.Invoke(newState);
+    }
+
+    public void Death()
+    {
+        Invoke("ToMainMenu", 3.0f);
+    }
+    private void ToMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
     }
 
     private void HandleSpawning()

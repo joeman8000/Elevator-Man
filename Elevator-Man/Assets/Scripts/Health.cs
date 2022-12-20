@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     private int health = 0;
+    public Animator animator;
     [SerializeField] private int maxHealth = 3;
 
     private void Start(){
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
     {
         health += mod;
 
+
         if(health > maxHealth)
         {
             health = maxHealth;
@@ -22,6 +24,11 @@ public class Health : MonoBehaviour
         {
             health = 0;
             Debug.Log("Player Die");
+            if fellOffMap = true
+            {
+                animator.SetBool("Death,", true);
+            }
+        
             
         }
 

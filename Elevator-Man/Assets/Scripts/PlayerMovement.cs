@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = this.GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -54,13 +54,17 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator shootGun()
     {
+        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (Vector2)((worldMousePos - transform.position));
+        direction.Normalize();
+
         canShoot = false;
         GameObject bulletCreated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody2D bulletRigidbody =  bulletCreated.GetComponent<Rigidbody2D>();
 
-        bulletRigidbody.AddForce(shootPoint.right * bulletSpeed);
+        bulletRigidbody.velocity = (direction * bulletSpeed);
 
-        Destroy(bulletCreated, 5);
+        Destroy(bulletCreated, 10);
         yield return new WaitForSeconds(shootSpeed);
         canShoot = true;
     }

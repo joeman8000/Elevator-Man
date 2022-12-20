@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Health h;
     [SerializeField] private int WavesPerShop;
     private static int floor;
+    public GameObject[] cardsL;
+    public GameObject[] cardsR;
 
     void Awake()
     {
@@ -65,14 +68,16 @@ public class GameManager : MonoBehaviour
                 //HandleInGame();
                 break;
             case GameState.Shop:
+                Debug.Log("0");
                 HandleShop();
+                Debug.Log("6");
                 break;
             case GameState.Lose:
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
-        Debug.Log("extra");
+        //Debug.Log("extra");
         OnGameStateChanged?.Invoke(newState);
     }
 
@@ -96,7 +101,18 @@ public class GameManager : MonoBehaviour
 
     private void HandleShop()
     {
-        
+        Debug.Log("1");
+        int randCard = UnityEngine.Random.Range(0, cardsL.Length);
+        int randCard2 = UnityEngine.Random.Range(0, cardsR.Length);
+        Debug.Log("2");
+        while(randCard == randCard2)
+        {
+        randCard2 = UnityEngine.Random.Range(0, cardsR.Length);
+        }
+        Debug.Log("3");
+        cardsL[randCard].SetActive(true);
+        cardsR[randCard2].SetActive(true);
+        Debug.Log("4");
     }
 
 }//6:31 https://www.youtube.com/watch?v=4I0vonyqMi8

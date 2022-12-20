@@ -733,6 +733,7 @@ MonoBehaviour:
   State: 0
   RandomSpawningItem: {fileID: 2093098456}
   ECount: {fileID: 1981538481}
+  h: {fileID: 1517046255}
 --- !u!1 &1192082315
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,6 +939,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1065176310366205522, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
   m_PrefabInstance: {fileID: 1065176309130706876}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1517046255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
+  m_PrefabInstance: {fileID: 1065176309130706876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517046249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4231f8b9e27e404da680fe03288829e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544851336
 GameObject:
   m_ObjectHideFlags: 0

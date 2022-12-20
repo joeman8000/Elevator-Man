@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public EnemyCounter ECount;
     public Health h;
     [SerializeField] private int WavesPerShop;
+    private static int floor;
 
     void Awake()
     {
@@ -32,7 +33,13 @@ public class GameManager : MonoBehaviour
         {
             if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
+                if(floor % 3 == 0)
+                {
+                    UpdateGameState(GameState.Shop);
+                }
+                else{
                 UpdateGameState(GameState.BeginGame);
+                }
             }
         }
 
@@ -49,6 +56,7 @@ public class GameManager : MonoBehaviour
         switch(newState)
         {
             case GameState.BeginGame:
+                ++floor;
                 Invoke("HandleSpawning", 3.0f);
                 break;
             case GameState.InGame:
@@ -57,6 +65,7 @@ public class GameManager : MonoBehaviour
                 //HandleInGame();
                 break;
             case GameState.Shop:
+                HandleShop();
                 break;
             case GameState.Lose:
                 break;
@@ -78,11 +87,16 @@ public class GameManager : MonoBehaviour
 
     private void HandleSpawning()
     {
-        int numOfE = 1;
+        int numOfE = floor + 1;
         RandomSpawningItem.EnemySpawn(numOfE);
         ECount.SetEnemiesAmount(numOfE);
         UpdateGameState(GameState.InGame);
         //EnemyManager.EnemySpawn(1);
+    }
+
+    private void HandleShop()
+    {
+        
     }
 
 }//6:31 https://www.youtube.com/watch?v=4I0vonyqMi8

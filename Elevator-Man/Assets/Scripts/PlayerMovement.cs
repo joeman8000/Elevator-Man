@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    public float _speed;
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
     private bool isFacingRight = true;

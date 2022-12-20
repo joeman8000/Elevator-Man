@@ -117,9 +117,19 @@ public class GameManager : MonoBehaviour
         randCard2 = UnityEngine.Random.Range(0, cardsR.Length);
         }
         Debug.Log("3");
-        cardsL[randCard].SetActive(true);
-        cardsR[randCard2].SetActive(true);
+        Invoke("CardLStart", 1f);
+        Invoke("CardRStart", 1f);
         Debug.Log("4");
+    }
+
+    public void CardLStart()
+    {
+        cardsL[randCard].SetActive(true);
+    }
+
+    public void CardRStart()
+    {
+        cardsR[randCard2].SetActive(true);
     }
 
     public void IncreaseBulletSpeed()
@@ -133,6 +143,14 @@ public class GameManager : MonoBehaviour
     public void IncreaseBulletDamage()
     {
         playerMove.bulletDamage += 2f;
+        UpdateGameState(GameState.BeginGame);
+        cardsL[randCard].SetActive(false);
+        cardsR[randCard2].SetActive(false);
+    }
+
+    public void IncreaseMovementSpeed()
+    {
+        playerMove._speed += 1f;
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);

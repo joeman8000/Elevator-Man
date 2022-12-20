@@ -835,6 +835,7 @@ MonoBehaviour:
   RandomSpawningItem: {fileID: 2093098456}
   ECount: {fileID: 1981538481}
   h: {fileID: 1517046255}
+  WavesPerShop: 0
 --- !u!1 &1192082315
 GameObject:
   m_ObjectHideFlags: 0

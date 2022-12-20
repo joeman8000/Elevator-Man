@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCounter : MonoBehaviour
 {
     public static int _amountofEnemies;
-    
+
     public void SetEnemiesAmount(int x)
     {
         _amountofEnemies = x;
@@ -16,6 +16,7 @@ public class EnemyCounter : MonoBehaviour
         --_amountofEnemies;
         if(_amountofEnemies == 0)
         {
+            Debug.Log("All Enemies are dead");
             return true;
         }
         return false;

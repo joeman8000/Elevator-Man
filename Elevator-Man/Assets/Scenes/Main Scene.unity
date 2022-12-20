@@ -997,6 +997,7 @@ MonoBehaviour:
   animator: {fileID: 788758183426953660}
   bullet: {fileID: 4412692050721431334, guid: 5f594ee2056628d4bb6d2dd238f0c334, type: 3}
   shootPoint: {fileID: 1517046254}
+  bulletDamage: 5
   shootSpeed: 0.1
   bulletSpeed: 5
 --- !u!50 &1517046252
@@ -1097,7 +1098,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

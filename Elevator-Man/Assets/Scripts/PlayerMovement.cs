@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public GameObject bullet;
     public Transform shootPoint;
+    public float bulletDamage;
     public float shootSpeed;
     public float bulletSpeed;
     private bool canShoot = true;

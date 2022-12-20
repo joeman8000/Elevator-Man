@@ -27,7 +27,11 @@ public class GameManager : MonoBehaviour
     {
         if (State == GameState.InGame)
         {
-            ECount.AmountofEnemies();
+            if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            {
+                UpdateGameState(GameState.BeginGame);
+            }
+
         }
     }
 
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.InGame:
                 Debug.Log("in game");
+
                 //HandleInGame();
                 break;
             case GameState.Shop:
@@ -57,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleSpawning()
     {
-        int numOfE = 4;
+        int numOfE = 1;
         RandomSpawningItem.EnemySpawn(numOfE);
         ECount.SetEnemiesAmount(numOfE);
         UpdateGameState(GameState.InGame);

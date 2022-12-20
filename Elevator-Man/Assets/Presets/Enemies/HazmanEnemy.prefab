@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6900116405720352659}
   m_Layer: 0
   m_Name: HazmanEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1412b000a1ad564b889add45e9e8a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyhealth: 20
   speed: 1
   distanceBetween: 100
   attackDamage: 5
   attackSpeed: 1
+  ECount: {fileID: 0}

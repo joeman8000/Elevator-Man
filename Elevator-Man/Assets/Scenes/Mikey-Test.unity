@@ -1615,6 +1615,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 227054325143232454, guid: ced30bbb2541fbe4f889128e6a72aa9d, type: 3}
   - {fileID: 2101827199847637473, guid: 0cc2a7c9698dcdd4b92400536d0e0155, type: 3}
+  - {fileID: 5783118023286955991, guid: 7d31223303b96ce4eb2fa8ad771c7d42, type: 3}
   player: {fileID: 1572942427}
   enemies: {fileID: 923774826}
 --- !u!4 &1338454547

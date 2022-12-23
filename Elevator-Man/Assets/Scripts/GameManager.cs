@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private int randCard;
     private int randCard2;
+    [HideInInspector] public static bool enemySpawned = false;
 
     void Awake()
     {
@@ -36,10 +37,11 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (State == GameState.InGame)
+        if (State == GameState.InGame && enemySpawned)
         {
             if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
+                enemySpawned = false;
                 if(floor % 3 == 0)
                 {
                     UpdateGameState(GameState.Shop);
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.BeginGame:
                 ++floor;
-                Invoke("HandleSpawning", 3.0f);
+                Invoke("HandleSpawning", 4.0f);
                 break;
             case GameState.InGame:
                 Debug.Log("in game");

@@ -9,6 +9,7 @@ public class RandomSpawner : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public GameObject player;
     public GameObject enemies;
+    public GameObject portalAnimation;
     public void EnemySpawn(int enemyAmount)
     {
         for(int i = 0; i < enemyAmount; i++)
@@ -16,9 +17,21 @@ public class RandomSpawner : MonoBehaviour
         int randEnemy = Random.Range(0, enemyPrefabs.Length);
         int randSpawnPoint = Random.Range(0, spawnPoints.Length);
 
-        GameObject childObject = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation); //as GameObject;
-        childObject.transform.parent = enemies.transform;
+        //Possible Memory leak with portals
+        Instantiate(portalAnimation, spawnPoints[randSpawnPoint].position, transform.rotation);
+
+        StartCoroutine(EnemySpawnExtra(randEnemy, randSpawnPoint));
+        //GameObject childObject = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation); //as GameObject;
+        //childObject.transform.parent = enemies.transform;
         }
+    }
+
+    IEnumerator EnemySpawnExtra(int randEnemy, int randSpawnPoint)
+    {
+        yield return new WaitForSeconds(1.0f);
+        GameObject childObject = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation); //as GameObject;
+        childObject.transform.parent = enemies.transform; 
+        GameManager.enemySpawned = true;
     }
 
     //click to spawn

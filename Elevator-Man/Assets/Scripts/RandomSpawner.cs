@@ -18,7 +18,9 @@ public class RandomSpawner : MonoBehaviour
         int randSpawnPoint = Random.Range(0, spawnPoints.Length);
 
         //Possible Memory leak with portals
-        Instantiate(portalAnimation, spawnPoints[randSpawnPoint].position, transform.rotation);
+        GameObject portalObject = Instantiate(portalAnimation, spawnPoints[randSpawnPoint].position, transform.rotation);
+        //StartCoroutine(PortalDelete(portalObject));
+        Destroy(portalObject, 2.15f);
 
         StartCoroutine(EnemySpawnExtra(randEnemy, randSpawnPoint));
         //GameObject childObject = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation); //as GameObject;
@@ -33,6 +35,12 @@ public class RandomSpawner : MonoBehaviour
         childObject.transform.parent = enemies.transform; 
         GameManager.enemySpawned = true;
     }
+
+    /*IEnumerator PortalDelete(GameObject portal)
+    {
+        yield return new WaitForSeconds(2.15f);
+        Destory();
+    }*/
 
     //click to spawn
     /*

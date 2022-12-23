@@ -43,11 +43,11 @@ TagManager:
   - name: Background
     uniqueID: 139413297
     locked: 0
-  - name: Floor
-    uniqueID: 2589371347
-    locked: 0
   - name: Chain
     uniqueID: 787945095
+    locked: 0
+  - name: Floor
+    uniqueID: 2589371347
     locked: 0
   - name: Default
     uniqueID: 0

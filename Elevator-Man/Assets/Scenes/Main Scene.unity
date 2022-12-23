@@ -702,6 +702,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GearChain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 787945095
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
 --- !u!1 &323024949
@@ -5426,6 +5434,14 @@ PrefabInstance:
     - target: {fileID: 8389374975112049281, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
       propertyPath: m_Name
       value: GearChain
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 787945095
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}

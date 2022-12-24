@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     [HideInInspector] public int health = 0;
     public Animator animator;
-    [SerializeField] private int maxHealth = 3;
+    public int maxHealth = 3;
     private Rigidbody2D rb;
     public GameObject DeathParticle;
     //public GameManager gm;

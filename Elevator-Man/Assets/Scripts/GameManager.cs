@@ -11,11 +11,11 @@ public class GameManager : MonoBehaviour
 
     public GameState State;
     [SerializeField] private PlayerMovement playerMove;
+    [SerializeField] private Health playerHealth;
 
     public static event Action<GameState> OnGameStateChanged;
     public RandomSpawner RandomSpawningItem;
     public EnemyCounter ECount;
-    public Health h;
     [SerializeField] private int WavesPerShop;
     private static int floor;
     public GameObject[] cardsL;
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if(h.health <= 0)
+        if(playerHealth.health <= 0)
         {
             Death();
         }
@@ -157,6 +157,25 @@ public class GameManager : MonoBehaviour
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
     }
+
+    public void IncreaseMaxHealth()
+    {
+        playerHealth.maxHealth += 1;
+        playerHealth.health++;
+        UpdateGameState(GameState.BeginGame);
+        cardsL[randCard].SetActive(false);
+        cardsR[randCard2].SetActive(false);
+    }
+
+    public void RegainFullHealth()
+    {
+        playerHealth.health = playerHealth.maxHealth;
+        UpdateGameState(GameState.BeginGame);
+        cardsL[randCard].SetActive(false);
+        cardsR[randCard2].SetActive(false);
+    }
+
+    
 
 }//6:31 https://www.youtube.com/watch?v=4I0vonyqMi8
 

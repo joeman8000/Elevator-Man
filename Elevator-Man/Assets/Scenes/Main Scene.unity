@@ -827,7 +827,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 570f9272b2d51d74eb7b86618a441734, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4167,7 +4167,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 80ad878e6c3f09f449c5ff7687b07762, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6943,6 +6943,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: aed20031a2142cc4fb841570f31ff486, type: 3}
     - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
+      propertyPath: hitPlayer
+      value: 
+      objectReference: {fileID: 1347451907}
+    - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
       propertyPath: maxHealth
       value: 4
       objectReference: {fileID: 0}
@@ -6953,7 +6957,7 @@ PrefabInstance:
     - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
       propertyPath: DeathParticle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6404565549100124067, guid: e6adce069007de2458c494fc8470b491, type: 3}
     - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
       propertyPath: hearts.Array.size
       value: 13

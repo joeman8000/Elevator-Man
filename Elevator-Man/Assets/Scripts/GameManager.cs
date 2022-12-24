@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameState State;
     [SerializeField] private PlayerMovement playerMove;
     [SerializeField] private Health playerHealth;
+    public AudioSource powerUp;
 
     public static event Action<GameState> OnGameStateChanged;
     public RandomSpawner RandomSpawningItem;
@@ -140,6 +141,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseBulletSpeed()
     {
         playerMove.shootSpeed -= .5f;
+        powerUp.Play();
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
@@ -148,6 +150,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseBulletDamage()
     {
         playerMove.bulletDamage += 2f;
+        powerUp.Play();
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
@@ -156,6 +159,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseMovementSpeed()
     {
         playerMove._speed += 1f;
+        powerUp.Play();
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
@@ -165,6 +169,7 @@ public class GameManager : MonoBehaviour
     {
         playerHealth.maxHealth += 1;
         playerHealth.health++;
+        powerUp.Play();
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
@@ -173,6 +178,7 @@ public class GameManager : MonoBehaviour
     public void RegainFullHealth()
     {
         playerHealth.health = playerHealth.maxHealth;
+        powerUp.Play();
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);

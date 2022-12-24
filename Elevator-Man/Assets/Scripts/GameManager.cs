@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseBulletSpeed()
     {
-        playerMove.shootSpeed -= .25f;
+        playerMove.shootSpeed -= .5f;
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);

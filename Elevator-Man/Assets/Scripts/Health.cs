@@ -54,7 +54,6 @@ public class Health : MonoBehaviour
         if(health > maxHealth)
         {
             health = maxHealth;
-            hitPlayer.Play();
         } else if (health <= 0)
         {
             health = 0;
@@ -68,6 +67,10 @@ public class Health : MonoBehaviour
                 animator.SetBool("Dead", true);
             }  
             rb.bodyType = RigidbodyType2D.Static;
+        }
+        else
+        {
+            hitPlayer.Play();
         }
 
     }

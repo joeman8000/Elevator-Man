@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public EnemyCounter ECount;
     [SerializeField] private int WavesPerShop;
     private static int floor;
+    public Text FloorCounterText;
     public GameObject[] cardsL;
     public GameObject[] cardsR;
 
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.BeginGame:
                 ++floor;
+                FloorCounterText.text = "Floor: " + floor;
                 Invoke("HandleSpawning", 4.0f);
                 break;
             case GameState.InGame:

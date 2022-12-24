@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public int maxHealth = 3;
     private Rigidbody2D rb;
     public GameObject DeathParticle;
+    public AudioSource hitPlayer;
     //public GameManager gm;
     public Image[] hearts;
     public Sprite fullHeart;
@@ -53,6 +54,7 @@ public class Health : MonoBehaviour
         if(health > maxHealth)
         {
             health = maxHealth;
+            hitPlayer.Play();
         } else if (health <= 0)
         {
             health = 0;

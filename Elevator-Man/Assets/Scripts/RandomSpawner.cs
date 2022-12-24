@@ -21,6 +21,8 @@ public class RandomSpawner : MonoBehaviour
         Destroy(portalObject, 2.15f);
 
         StartCoroutine(EnemySpawnExtra(randEnemy, randSpawnPoint));
+
+        StartCoroutine(EnemySpawnedTrue());
         }
     }
 
@@ -29,6 +31,11 @@ public class RandomSpawner : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         GameObject childObject = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation); //as GameObject;
         childObject.transform.parent = enemies.transform; 
+    }
+
+    IEnumerator EnemySpawnedTrue()
+    {
+        yield return new WaitForSeconds(3.0f);
         GameManager.enemySpawned = true;
     }
 

@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UpdateGameState(GameState.BeginGame);
+        enemySpawned = false;
     }
 
     void FixedUpdate()

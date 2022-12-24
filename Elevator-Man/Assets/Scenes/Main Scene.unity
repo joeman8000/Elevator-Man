@@ -1043,7 +1043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
       propertyPath: m_SortingLayerID
@@ -6943,6 +6943,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: aed20031a2142cc4fb841570f31ff486, type: 3}
     - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
+      propertyPath: hitPlayer
+      value: 
+      objectReference: {fileID: 1347451907}
+    - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
       propertyPath: maxHealth
       value: 4
       objectReference: {fileID: 0}
@@ -6953,7 +6957,7 @@ PrefabInstance:
     - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
       propertyPath: DeathParticle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7444168732717142680, guid: 43755f386ec88834ead51bd739e436d4, type: 3}
     - target: {fileID: 304695932685725185, guid: 40a122a8a47cffe4a99c1052e80eda18, type: 3}
       propertyPath: hearts.Array.size
       value: 13
@@ -7251,7 +7255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8389374975883395973, guid: 5fb7f39f41404f74cb6c893bb2e49c07, type: 3}
       propertyPath: m_SortingLayerID

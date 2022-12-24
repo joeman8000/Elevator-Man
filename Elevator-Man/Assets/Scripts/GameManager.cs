@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerMovement playerMove;
     [SerializeField] private Health playerHealth;
     public AudioSource powerUp;
+    public AudioSource ShopMusic;
+    public AudioSource MainTheme;
 
     public static event Action<GameState> OnGameStateChanged;
     public RandomSpawner RandomSpawningItem;
@@ -78,6 +80,8 @@ public class GameManager : MonoBehaviour
                 //HandleInGame();
                 break;
             case GameState.Shop:
+                MainTheme.Stop();
+                ShopMusic.Play();
                 Debug.Log("0");
                 HandleShop();
                 Debug.Log("6");
@@ -145,6 +149,8 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
+        MainTheme.Play();
+        ShopMusic.Stop();
     }
 
     public void IncreaseBulletDamage()
@@ -154,6 +160,8 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
+        MainTheme.Play();
+        ShopMusic.Stop();
     }
 
     public void IncreaseMovementSpeed()
@@ -163,6 +171,8 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
+        MainTheme.Play();
+        ShopMusic.Stop();
     }
 
     public void IncreaseMaxHealth()
@@ -173,6 +183,8 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
+        MainTheme.Play();
+        ShopMusic.Stop();
     }
 
     public void RegainFullHealth()
@@ -182,6 +194,8 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.BeginGame);
         cardsL[randCard].SetActive(false);
         cardsR[randCard2].SetActive(false);
+        MainTheme.Play();
+        ShopMusic.Stop();
     }
 
     

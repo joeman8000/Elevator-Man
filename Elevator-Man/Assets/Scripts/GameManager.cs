@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviour
             case GameState.Shop:
                 MainTheme.Stop();
                 ShopMusic.Play();
+                FloorCounterText.text = "Floor: Shop";
                 Debug.Log("0");
                 HandleShop();
                 Debug.Log("6");

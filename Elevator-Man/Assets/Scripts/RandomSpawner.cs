@@ -10,19 +10,43 @@ public class RandomSpawner : MonoBehaviour
     public GameObject player;
     public GameObject enemies;
     public GameObject portalAnimation;
+    public GameObject FrenzyUI;
     public void EnemySpawn(int enemyAmount)
     {
-        for(int i = 0; i < enemyAmount; i++)
+        int frenzyRoundChance = Random.Range(0, 8);
+        
+        if(frenzyRoundChance == 1)
         {
-        int randEnemy = Random.Range(0, enemyPrefabs.Length);
-        int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+            int randEnemy = Random.Range(0, enemyPrefabs.Length);
+            FrenzyUI.SetActive(true);
+            StartCoroutine(FrenzyUIDeactivate());
 
-        GameObject portalObject = Instantiate(portalAnimation, spawnPoints[randSpawnPoint].position, transform.rotation);
-        Destroy(portalObject, 2.15f);
 
-        StartCoroutine(EnemySpawnExtra(randEnemy, randSpawnPoint));
+            for(int i = 0; i < enemyAmount; i++)
+            {
+            int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+            GameObject portalObject = Instantiate(portalAnimation, spawnPoints[randSpawnPoint].position, transform.rotation);
+            Destroy(portalObject, 2.15f);
 
-        StartCoroutine(EnemySpawnedTrue());
+            StartCoroutine(EnemySpawnExtra(randEnemy, randSpawnPoint));
+
+            StartCoroutine(EnemySpawnedTrue());   
+            }
+        }
+        else
+        {
+            for(int i = 0; i < enemyAmount; i++)
+            {
+            int randEnemy = Random.Range(0, enemyPrefabs.Length);
+            int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+
+            GameObject portalObject = Instantiate(portalAnimation, spawnPoints[randSpawnPoint].position, transform.rotation);
+            Destroy(portalObject, 2.15f);
+
+            StartCoroutine(EnemySpawnExtra(randEnemy, randSpawnPoint));
+
+            StartCoroutine(EnemySpawnedTrue());
+        }
         }
     }
 
@@ -38,7 +62,12 @@ public class RandomSpawner : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         GameManager.enemySpawned = true;
     }
-
+    
+    IEnumerator FrenzyUIDeactivate()
+    {
+        yield return new WaitForSeconds(3.0f);
+        FrenzyUI.SetActive(false);
+    }
 
 
 }

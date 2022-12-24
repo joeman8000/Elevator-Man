@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyhealth: 1
-  speed: 3
+  speed: 2.75
   distanceBetween: 100
   attackDamage: 1
   attackSpeed: 2.5

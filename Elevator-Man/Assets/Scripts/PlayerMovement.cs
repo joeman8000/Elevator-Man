@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float bulletDamage;
     public float shootSpeed;
     public float bulletSpeed;
+    public AudioSource ShootNoise;
     private bool canShoot = true;
 
     private void Awake()
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         canShoot = false;
         GameObject bulletCreated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody2D bulletRigidbody =  bulletCreated.GetComponent<Rigidbody2D>();
+        ShootNoise.Play();
 
         bulletRigidbody.velocity = (direction * bulletSpeed);
 

@@ -151,7 +151,7 @@ MonoBehaviour:
   speed: 3
   distanceBetween: 100
   attackDamage: 1
-  attackSpeed: 1
+  attackSpeed: 0.25
   EnemyDeathParticle: {fileID: 6404565549100124067, guid: e6adce069007de2458c494fc8470b491, type: 3}
 --- !u!95 &7584375346575904048
 Animator:

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-[SerializeField] private  GameObject _MenuPanel;
-//[SerializeField] private TextMesh _stateText;
+[SerializeField] private GameObject _MenuPanel;
+public GameObject helpUI;
+public GameObject startUI;
+
 
 void Awake()
 {
@@ -28,6 +30,18 @@ private void GameManagerOnOnGameStateChanged(GameState state)
 public void StartGame()
 {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+}
+
+public void HelpUIActivate()
+{
+    startUI.SetActive(false);
+    helpUI.SetActive(true);
+}
+
+public void HelpUIDeactivate()
+{
+    startUI.SetActive(true);
+    helpUI.SetActive(false);
 }
 
 
